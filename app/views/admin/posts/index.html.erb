@@ -1,0 +1,34 @@
+<h1>Admin clankov</h1>
+
+<p>
+<%= link_to "Pridat clanok", new_admin_post_path, class: "btn btn-primary" %>
+</p>
+
+
+<table class="table">
+
+  <thead>
+
+    <tr>
+      <th>Nazov</th>
+      <th>Publikovane</th>
+      <th>Akcie</th>
+    </tr>
+  </thead>
+
+  
+
+    <% @posts.each do |post| %>
+  <tbody>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.published %></td>
+      <td><%= link_to "Upravit", edit_admin_post_path(post) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

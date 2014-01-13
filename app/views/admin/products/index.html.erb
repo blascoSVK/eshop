@@ -1,0 +1,31 @@
+<h1>Admin produktov</h1>
+<p>Find me in app/views/admin/products/index.html.erb</p>
+
+<%= link_to "Pridat novy product", new_admin_product_path, class: "btn btn-primary" %></br>
+
+<table>
+    <thead>
+     
+        <tr>
+          <th>Nazov</th>
+          <th>Popis</th>
+          <th>Cena</th>
+          <th>Url obrazka</th>
+          <th>Akcie</th>
+        </tr>
+
+
+    </thead>
+    <% @products.each do |product| %>
+    <tbody>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price.round(2) %> €</td>
+          <td><%= product.image_url %></td>
+        </tr>
+
+    <% end %>
+
+    </tbody>
+</table>
